@@ -1,0 +1,10 @@
+@root = http://c23f40f579fb.ngrok.io
+
+docs:   https://progress-draw-test.wl.r.appspot.com/api/ui/#/person/confrim_prize_assignment
+
+
+### Роызыгыш
+POST @root
+Content-Type: application/json
+
+{"ip_address": "10.10.196.196"}
