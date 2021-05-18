@@ -1,15 +1,34 @@
+# https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+
 @root = http://c23f40f579fb.ngrok.io
 
 
 # POST http://c23f40f579fb.ngrok.io/mail
 
-POST @root/mail
+POST {{root}}/mail
 Content-Type: application/json
 
-{"headers" : {"subj": "s"}, "plain": "10.10.196.196"}
+{
+  "headers": {
+    "return_path": "from@example.com",
+    "received": [
+      "by 10.52.90.229 with SMTP id bz5cs75582vdb; Mon, 16 Jan 2012 09:00:07 -0800",
+      "by 10.216.131.153 with SMTP id m25mr5479776wei.9.1326733205283; Mon, 16 Jan 2012 09:00:05 -0800",
+      "from mail-wi0-f170.google.com (mail-wi0-f170.google.com [209.85.212.170]) by mx.google.com with ESMTPS id u74si9614172weq.62.2012.01.16.09.00.04 (version=TLSv1/SSLv3 cipher=OTHER); Mon, 16 Jan 2012 09:00:04 -0800"
+    ],
+    "date": "Mon, 16 Jan 2012 17:00:01 +0000",
+    "from": "Message Sender <sender@example.com>",
+    "to": "Message Recipient<to@example.co.uk>",
+    "message_id": "<4F145791.8040802@example.com>",
+    "subject": "Test Subject",
+    "mime_version": "1.0",
+    "content_type": "multipart/alternative; boundary=------------090409040602000601080801",
+    "delivered_to": "to@example.com",
+    "received_spf": "neutral (google.com: 10.0.10.1 is neither permitted nor denied by best guess record for domain of from@example.com) client-ip=10.0.10.1;",
+    "authentication_results": "mx.google.com; spf=neutral (google.com: 10.0.10.1 is neither permitted nor denied by best guess record for domain of from@example.com) smtp.mail=from@example.com",
+    "user_agent": "Postbox 3.0.2 (Macintosh/20111203)"
+  },
+  "plain": "New Test with HTML.  date: 23/02/21" }
 
 
-
-# docs:   https://progress-draw-test.wl.r.appspot.com/api/ui/#/person/confrim_prize_assignment
-
-GET  https://c23f40f579fb.ngrok.io
